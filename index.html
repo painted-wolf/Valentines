@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day!</title>
+    <title>Will You Be My Valentine?</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,17 +54,141 @@
         .button:hover {
             background-color: #e60000;
         }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .gallery img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .decorative-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .decorative-icons div {
+            font-size: 4em;
+            animation: bounce 1.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .game-section {
+            margin-top: 50px;
+        }
+        #clickMeButton {
+            padding: 10px 20px;
+            background-color: #ff4d4d;
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #clickMeButton:hover {
+            background-color: #e60000;
+        }
+        #clickCounter {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .proposal {
+            margin-top: 50px;
+            font-size: 2em;
+            color: #ff4d4d;
+        }
+        #yesButton, #noButton {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #yesButton {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        #noButton {
+            background-color: #e6e6e6;
+            color: #333;
+        }
+        #yesButton:hover {
+            background-color: #e60000;
+        }
+        #noButton:hover {
+            background-color: #cccccc;
+        }
     </style>
 </head>
 <body>
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <div class="container">
-        <h1>Happy Valentine's Day, My Love!</h1>
+        <h1>To Manee Vang</h1>
         <div class="heart">❤️</div>
-        <p>You mean the world to me, and I wanted to create something special just for you.</p>
+        <p>I wanted to create something special just for you.</p>
         <div class="message">
-            <p>Every moment we share feels like a beautiful dream come true. Your smile lights up my world, and your love fills my heart with endless joy. Thank you for being the amazing person you are. I can't wait to create more wonderful memories with you!</p>
+            <p>Thank you for being the amazing person you are. I can't wait to create more wonderful memories with you!</p>
         </div>
-        <a class="button" href="#">Click here for a surprise! 🎁</a>
+
+        <!-- Proposal Section -->
+        <div class="proposal">
+            <p>Will you be my Valentine?</p>
+            <button id="yesButton">Yes! 💖</button>
+            <button id="noButton">No 😢</button>
+        </div>
+
+        <!-- Single Image Display -->
+        <div class="gallery">
+            <img src="https://media.discordapp.net/attachments/1287180497255923712/1339159331408711710/image.jpg?ex=67adb4d0&is=67ac6350&hm=0645828f98e757df6cd6fb30b75341d3f5701950a7581c3c875de04a08b45cb6&=&format=webp&width=759&height=569" alt="Picture of us">
+        </div>
+
+        <!-- Decorative Icons -->
+        <div class="decorative-icons">
+            <div>🌸</div>
+            <div>🐦</div>
+            <div>💐</div>
+            <div>🌷</div>
+        </div>
+
+        <!-- Simple Game Section -->
+        <div class="game-section">
+            <h2></h2>
+            <button id="clickMeButton">Click Me! 💖</button>
+            <div id="clickCounter">Love Points: 0</div>
+        </div>
     </div>
+
+    <script>
+        let count = 0;
+        document.getElementById('clickMeButton').addEventListener('click', function() {
+            count++;
+            document.getElementById('clickCounter').innerText = 'Love Points: ' + count;
+        });
+
+        document.getElementById('yesButton').addEventListener('click', function() {
+            alert('Yaaaaaaaaaaaaaay! 💖');
+        });
+
+        document.getElementById('noButton').addEventListener('click', function() {
+            alert('tf bitch');
+        });
+    </script>
 </body>
 </html>
