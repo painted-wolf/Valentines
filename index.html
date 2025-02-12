@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
+    <title>A Special Surprise</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -88,7 +88,7 @@
         .game-section {
             margin-top: 50px;
         }
-        #clickMeButton {
+        #clickMeButton, #revealButton {
             padding: 10px 20px;
             background-color: #ff4d4d;
             color: white;
@@ -97,7 +97,7 @@
             border-radius: 10px;
             cursor: pointer;
         }
-        #clickMeButton:hover {
+        #clickMeButton:hover, #revealButton:hover {
             background-color: #e60000;
         }
         #clickCounter {
@@ -108,6 +108,7 @@
             margin-top: 50px;
             font-size: 2em;
             color: #ff4d4d;
+            display: none;
         }
         #yesButton, #noButton {
             padding: 15px 30px;
@@ -147,8 +148,11 @@
             <p>Thank you for being the amazing person you are. I can't wait to create more wonderful memories with you!</p>
         </div>
 
-        <!-- Proposal Section -->
-        <div class="proposal">
+        <!-- Reveal Button -->
+        <button id="revealButton">I have a question for you... 💌</button>
+
+        <!-- Proposal Section (Hidden Initially) -->
+        <div class="proposal" id="proposal">
             <p>Will you be my Valentine?</p>
             <button id="yesButton">Yes! 💖</button>
             <button id="noButton">No 😢</button>
@@ -156,7 +160,7 @@
 
         <!-- Single Image Display -->
         <div class="gallery">
-            <img src="https://media.discordapp.net/attachments/1287180497255923712/1339159331408711710/image.jpg?ex=67adb4d0&is=67ac6350&hm=0645828f98e757df6cd6fb30b75341d3f5701950a7581c3c875de04a08b45cb6&=&format=webp&width=759&height=569" alt="Picture of us">
+            <img src="https://media.discordapp.net/attachments/1287180497255923712/1339159331408711710/image.jpg?ex=67adb4d0&is=67ac6350&hm=0645828f98e757df6cd6fb30b75341d3f5701950a7581c3c875de04a08b45cb6&=&format=webp&width=762&height=572" alt="Picture of us">
         </div>
 
         <!-- Decorative Icons -->
@@ -169,7 +173,7 @@
 
         <!-- Simple Game Section -->
         <div class="game-section">
-            <h2></h2>
+            <h2>Click the Button for Love Points!</h2>
             <button id="clickMeButton">Click Me! 💖</button>
             <div id="clickCounter">Love Points: 0</div>
         </div>
@@ -188,6 +192,12 @@
 
         document.getElementById('noButton').addEventListener('click', function() {
             alert('tf bitch');
+        });
+
+        // Reveal Proposal on Button Click
+        document.getElementById('revealButton').addEventListener('click', function() {
+            document.getElementById('proposal').style.display = 'block';
+            this.style.display = 'none'; // Hide the reveal button after clicking
         });
     </script>
 </body>
